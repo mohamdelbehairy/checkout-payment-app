@@ -1,3 +1,4 @@
+import 'package:checkout_payment_ui/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class MyCardView extends StatelessWidget {
@@ -8,7 +9,7 @@ class MyCardView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('My Card'),
+        title: const Text('My Card',style: Styles.styleMedium25),
       ),
     );
   }
