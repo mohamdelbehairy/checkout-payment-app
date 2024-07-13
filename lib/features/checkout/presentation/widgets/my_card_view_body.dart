@@ -15,7 +15,7 @@ class MyCardViewBody extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 18),
-          Image.asset(Assets.imagesBacket),
+          Expanded(child: Image.asset(Assets.imagesBacket)),
           const SizedBox(height: 25),
           const OrderInfoItem(title: 'Order Subtotal', value: r'$42.97'),
           const SizedBox(height: 5),
@@ -26,7 +26,7 @@ class MyCardViewBody extends StatelessWidget {
           const TotalPrice(title: 'Total', value: r'$50.97'),
           const SizedBox(height: 16),
           CustomButton(onTap: () {}),
-           const SizedBox(height: 12),
+           const SizedBox(height: 16),
         ],
       ),
     );
