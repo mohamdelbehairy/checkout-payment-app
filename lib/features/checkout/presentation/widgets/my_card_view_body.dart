@@ -2,6 +2,7 @@ import 'package:checkout_payment_ui/core/utils/assets.dart';
 import 'package:checkout_payment_ui/features/checkout/presentation/widgets/total_price.dart';
 import 'package:flutter/material.dart';
 
+import 'custom_button.dart';
 import 'order_info_item.dart';
 
 class MyCardViewBody extends StatelessWidget {
@@ -22,7 +23,10 @@ class MyCardViewBody extends StatelessWidget {
           const SizedBox(height: 5),
           const OrderInfoItem(title: 'Shipping', value: r'$8'),
           const Divider(height: 34, thickness: 2, color: Color(0xffC7C7C7)),
-          const TotalPrice(title: 'Total', value: r'$50.97')
+          const TotalPrice(title: 'Total', value: r'$50.97'),
+          const SizedBox(height: 16),
+          CustomButton(onTap: () {}),
+           const SizedBox(height: 12),
         ],
       ),
     );

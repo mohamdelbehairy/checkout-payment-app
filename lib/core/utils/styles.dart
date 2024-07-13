@@ -40,4 +40,12 @@ abstract class Styles {
     fontWeight: FontWeight.w400,
     height: 0,
   );
+
+    static TextStyle styleMedium22 = TextStyle(
+    color: Colors.black.withOpacity(0.800000011920929),
+    fontSize: 22,
+    fontFamily: "Inter",
+    fontWeight: FontWeight.w500,
+    height: 0,
+  );
 }
