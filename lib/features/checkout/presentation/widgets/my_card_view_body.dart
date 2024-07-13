@@ -1,6 +1,8 @@
 import 'package:checkout_payment_ui/core/utils/assets.dart';
-import 'package:checkout_payment_ui/core/utils/styles.dart';
+import 'package:checkout_payment_ui/features/checkout/presentation/widgets/total_price.dart';
 import 'package:flutter/material.dart';
+
+import 'order_info_item.dart';
 
 class MyCardViewBody extends StatelessWidget {
   const MyCardViewBody({super.key});
@@ -19,24 +21,10 @@ class MyCardViewBody extends StatelessWidget {
           const OrderInfoItem(title: 'Discount', value: r'$0'),
           const SizedBox(height: 5),
           const OrderInfoItem(title: 'Shipping', value: r'$8'),
+          const Divider(height: 34, thickness: 2, color: Color(0xffC7C7C7)),
+          const TotalPrice(title: 'Total', value: r'$50.97')
         ],
       ),
-    );
-  }
-}
-
-class OrderInfoItem extends StatelessWidget {
-  const OrderInfoItem({super.key, required this.title, required this.value});
-  final String title, value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(title, style: Styles.styleRegular18),
-        Text(value, style: Styles.styleRegular18)
-      ],
     );
   }
 }
