@@ -1,7 +1,8 @@
 import 'package:checkout_payment_ui/core/utils/styles.dart';
+import 'package:checkout_payment_ui/features/checkout/presentation/widgets/total_price.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
+import 'card_info_widget.dart';
 import 'payment_item_info.dart';
 
 class ThankYouCard extends StatelessWidget {
@@ -27,6 +28,10 @@ class ThankYouCard extends StatelessWidget {
               const PaymentItemInfo(title: 'Time', value: '10:15 AM'),
               const SizedBox(height: 20),
               const PaymentItemInfo(title: 'To', value: 'Sam Louis'),
+              const Divider(thickness: 2, color: Color(0xffC7C7C7), height: 60),
+              const TotalPrice(title: 'Total', value: r'$50.97'),
+              const SizedBox(height: 30),
+              const CardInfoWIdget()
             ],
           ),
         ));
