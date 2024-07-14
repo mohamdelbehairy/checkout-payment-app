@@ -4,8 +4,8 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/utils/styles.dart';
 
-class CardInfoWIdget extends StatelessWidget {
-  const CardInfoWIdget({super.key});
+class CardInfoWidget extends StatelessWidget {
+  const CardInfoWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
