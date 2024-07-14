@@ -3,14 +3,19 @@ import 'package:flutter/material.dart';
 
 import 'payment_details_method_item.dart';
 
-class PaymentMethodsListView extends StatelessWidget {
+class PaymentMethodsListView extends StatefulWidget {
   const PaymentMethodsListView({super.key});
 
+  @override
+  State<PaymentMethodsListView> createState() => _PaymentMethodsListViewState();
+}
+
+class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
   final List<String> items = const [
     Assets.imagesCard,
     Assets.imagesPaypal,
   ];
-
+  int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -21,8 +26,15 @@ class PaymentMethodsListView extends StatelessWidget {
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: PaymentDetailsMethodItem(
-                  isActive: false, image: items[index]),
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    activeIndex = index;
+                  });
+                },
+                child: PaymentDetailsMethodItem(
+                    isActive: activeIndex == index, image: items[index]),
+              ),
             );
           }),
     );
