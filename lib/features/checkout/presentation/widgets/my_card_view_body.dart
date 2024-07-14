@@ -27,6 +27,7 @@ class MyCardViewBody extends StatelessWidget {
           const TotalPrice(title: 'Total', value: r'$50.97'),
           const SizedBox(height: 16),
           CustomButton(
+            buttonName: 'Complete Payment',
               onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
