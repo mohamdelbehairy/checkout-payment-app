@@ -1,4 +1,5 @@
 import 'package:checkout_payment_ui/core/utils/assets.dart';
+import 'package:checkout_payment_ui/features/checkout/presentation/views/payment_details_view.dart';
 import 'package:checkout_payment_ui/features/checkout/presentation/widgets/total_price.dart';
 import 'package:flutter/material.dart';
 
@@ -25,8 +26,12 @@ class MyCardViewBody extends StatelessWidget {
           const Divider(height: 34, thickness: 2, color: Color(0xffC7C7C7)),
           const TotalPrice(title: 'Total', value: r'$50.97'),
           const SizedBox(height: 16),
-          CustomButton(onTap: () {}),
-           const SizedBox(height: 16),
+          CustomButton(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const PaymentDetailsView()))),
+          const SizedBox(height: 16),
         ],
       ),
     );
