@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/widgets/build_app_bar.dart';
+import '../widgets/payment_details_view_body.dart';
 
 class PaymentDetailsView extends StatelessWidget {
   const PaymentDetailsView({super.key});
@@ -9,6 +10,8 @@ class PaymentDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(title: 'Payment Details'),
+      body: const PaymentDetailsViewBody(),
     );
   }
 }
+
