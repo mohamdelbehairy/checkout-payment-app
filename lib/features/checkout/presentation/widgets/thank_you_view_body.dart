@@ -15,6 +15,22 @@ class ThankYouViewBody extends StatelessWidget {
                   color: const Color(0xffD9D9D9),
                   borderRadius: BorderRadius.circular(20))),
           Positioned(
+            bottom: MediaQuery.sizeOf(context).height * .2 + 20,
+            right: 20 + 8,
+            left: 20 + 8,
+            child: Row(
+              children: List.generate(
+                  30,
+                  (index) => Expanded(
+                        child: Container(
+                          height: 2,
+                          margin: const EdgeInsets.symmetric(horizontal: 2),
+                          color: const Color(0xffB8B8B8),
+                        ),
+                      )),
+            ),
+          ),
+          Positioned(
               left: -20,
               bottom: MediaQuery.sizeOf(context).height * .2,
               child: const CircleAvatar(backgroundColor: Colors.white)),
@@ -32,7 +48,7 @@ class ThankYouViewBody extends StatelessWidget {
               child: CircleAvatar(
                 radius: 40,
                 backgroundColor: Colors.green,
-                child: Icon(Icons.check, color: Colors.white,size: 50),
+                child: Icon(Icons.check, color: Colors.white, size: 50),
               ),
             ),
           )
