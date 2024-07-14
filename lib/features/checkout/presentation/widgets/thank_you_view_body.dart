@@ -6,8 +6,9 @@ class ThankYouViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(32.0),
+      padding: const EdgeInsets.all(20.0),
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           Container(
               decoration: BoxDecoration(
@@ -20,7 +21,21 @@ class ThankYouViewBody extends StatelessWidget {
           Positioned(
               right: -20,
               bottom: MediaQuery.sizeOf(context).height * .2,
-              child: const CircleAvatar(backgroundColor: Colors.white))
+              child: const CircleAvatar(backgroundColor: Colors.white)),
+          const Positioned(
+            top: -50,
+            left: 0.0,
+            right: 0.0,
+            child: CircleAvatar(
+              radius: 50,
+              backgroundColor: Color(0xffD9D9D9),
+              child: CircleAvatar(
+                radius: 40,
+                backgroundColor: Colors.green,
+                child: Icon(Icons.check, color: Colors.white,size: 50),
+              ),
+            ),
+          )
         ],
       ),
     );
