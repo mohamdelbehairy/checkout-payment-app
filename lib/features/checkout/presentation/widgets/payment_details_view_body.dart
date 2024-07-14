@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 
 import 'payment_methods_list_view.dart';
@@ -8,11 +9,13 @@ class PaymentDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        PaymentMethodsListView(),
-        CustomCreditCard()
-      ],
+    return const SingleChildScrollView(
+      child: Column(
+        children: [
+          PaymentMethodsListView(),
+          CustomCreditCard(),
+        ],
+      ),
     );
   }
 }
@@ -25,6 +28,8 @@ class CustomCreditCard extends StatefulWidget {
 }
 
 class _CustomCreditCardState extends State<CustomCreditCard> {
+  GlobalKey<FormState> formKey = GlobalKey();
+
   String cardNumber = '', expiryDate = '', cardHolderName = '', cvvCode = '';
   bool showBackView = false;
   @override
@@ -37,7 +42,23 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
             cardHolderName: cardHolderName,
             cvvCode: cvvCode,
             showBackView: showBackView,
+            isHolderNameVisible: true,
             onCreditCardWidgetChange: (value) {}),
+        CreditCardForm(
+            cardNumber: cardNumber,
+            expiryDate: expiryDate,
+            cardHolderName: cardHolderName,
+            cvvCode: cvvCode,
+            onCreditCardModelChange: (creditCardModel) {
+              setState(() {
+                cardNumber = creditCardModel.cardNumber;
+                expiryDate = creditCardModel.expiryDate;
+                cvvCode = creditCardModel.cvvCode;
+                cardHolderName = creditCardModel.cardHolderName;
+                showBackView = creditCardModel.isCvvFocused;
+              });
+            },
+            formKey: formKey)
       ],
     );
   }
