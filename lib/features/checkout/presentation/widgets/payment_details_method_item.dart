@@ -1,10 +1,11 @@
-import 'package:checkout_payment_ui/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PaymentDetailsMethodItem extends StatelessWidget {
-  const PaymentDetailsMethodItem({super.key, this.isActive = false});
+  const PaymentDetailsMethodItem(
+      {super.key, required this.isActive, required this.image});
   final bool isActive;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +16,11 @@ class PaymentDetailsMethodItem extends StatelessWidget {
       decoration: BoxDecoration(
           border: Border.all(
               width: isActive ? 1.5 : 1.0,
-              color:
-                  isActive ? const Color(0xff34A853) : Colors.grey),
+              color: isActive ? const Color(0xff34A853) : Colors.grey),
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
-                color: isActive ?  const Color(0xff34A853) : Colors.white,
+                color: isActive ? const Color(0xff34A853) : Colors.white,
                 blurRadius: isActive ? 4.0 : 0.0,
                 offset: const Offset(0, 0),
                 spreadRadius: 0.0)
@@ -30,7 +30,8 @@ class PaymentDetailsMethodItem extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(15),
         ),
-        child: Center(child: SvgPicture.asset(Assets.imagesCard, height: 30)),
+        child: Center(
+            child: SvgPicture.asset(image, height: 30, fit: BoxFit.scaleDown)),
       ),
     );
   }

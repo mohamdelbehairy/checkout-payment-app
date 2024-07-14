@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'payment_details_method_item.dart';
+import 'payment_methods_list_view.dart';
 
 class PaymentDetailsViewBody extends StatelessWidget {
   const PaymentDetailsViewBody({super.key});
@@ -9,7 +9,7 @@ class PaymentDetailsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        PaymentDetailsMethodItem(isActive: false),
+        PaymentMethodsListView(),
       ],
     );
   }
