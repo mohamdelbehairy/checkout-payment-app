@@ -41,7 +41,7 @@ abstract class Styles {
     height: 0,
   );
 
-    static TextStyle styleMedium22 = TextStyle(
+  static TextStyle styleMedium22 = TextStyle(
     color: Colors.black.withOpacity(0.800000011920929),
     fontSize: 22,
     fontFamily: "Inter",

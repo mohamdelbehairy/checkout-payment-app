@@ -13,6 +13,4 @@ class MyCardView extends StatelessWidget {
       body: const MyCardViewBody(),
     );
   }
-
-
 }

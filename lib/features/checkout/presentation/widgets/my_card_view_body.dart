@@ -43,4 +43,3 @@ class MyCardViewBody extends StatelessWidget {
     );
   }
 }
-

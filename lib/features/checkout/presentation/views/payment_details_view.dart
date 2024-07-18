@@ -14,4 +14,3 @@ class PaymentDetailsView extends StatelessWidget {
     );
   }
 }
-
