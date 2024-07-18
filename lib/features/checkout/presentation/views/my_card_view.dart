@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/widgets/build_app_bar.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
 import '../widgets/my_card_view_body.dart';
 
 class MyCardView extends StatelessWidget {
@@ -9,7 +9,7 @@ class MyCardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(title: 'My Card'),
+      appBar: customAppBar(title: 'My Card'),
       body: const MyCardViewBody(),
     );
   }

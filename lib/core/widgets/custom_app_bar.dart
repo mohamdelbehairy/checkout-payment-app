@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import '../utils/assets.dart';
 import '../utils/styles.dart';
 
-AppBar buildAppBar({ String? title}) {
+AppBar customAppBar({ String? title}) {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0.0,
