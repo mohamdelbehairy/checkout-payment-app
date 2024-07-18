@@ -1,5 +1,5 @@
 import 'card.dart';
-import 'patment_intent_model.dart';
+import 'payment_intent_model.dart';
 
 class PaymentMethodOptions {
   Card? card;
