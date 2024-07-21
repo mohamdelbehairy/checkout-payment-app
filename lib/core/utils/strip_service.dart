@@ -25,4 +25,8 @@ class StripService {
             paymentIntentClientSecret: paymentIntentClientSecret,
             merchantDisplayName: 'Mohamed Elbehairy'));
   }
+
+  Future<void> displayPaymentSheet() async {
+    await Stripe.instance.presentPaymentSheet();
+  }
 }
