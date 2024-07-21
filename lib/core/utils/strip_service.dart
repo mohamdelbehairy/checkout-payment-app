@@ -1,8 +1,19 @@
+import 'package:checkout_payment_ui/core/utils/api_keys.dart';
+import 'package:checkout_payment_ui/core/utils/api_service.dart';
+import 'package:checkout_payment_ui/features/checkout/data/models/payment_intent_input_model.dart';
+
 import '../../features/checkout/data/models/payment_intent_model/payment_intent_model.dart';
 
 class StripService {
-  // PatmentIntentModel createPaymentIntent(
-  //     PatmentIntentModel paymentIntentModel) {
+  final ApiService apiService = ApiService();
+  Future<PatmentIntentModel> createPaymentIntent(
+      PaymentIntentInputModel paymentIntentInputModel) async {
+    var response = await apiService.post(
+        body: paymentIntentInputModel.toJson(),
+        url: 'https://api.stripe.com/v1/payment_intents',
+        token: ApiKeys.secretKey);
 
-  //     }
+    var paymentIntentModel = PatmentIntentModel.fromJson(response.data);
+    return paymentIntentModel;
+  }
 }
