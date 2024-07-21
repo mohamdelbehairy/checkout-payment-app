@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_button_blo_consumber.dart';
+import 'custom_button_bloc_consumber.dart';
 import 'payment_methods_list_view.dart';
 
 class PaymentMethodBottomSheet extends StatelessWidget {

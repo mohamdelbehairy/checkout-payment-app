@@ -19,7 +19,10 @@ class PaymentCubit extends Cubit<PaymentState> {
         paymentIntentInputModel: paymentIntentInputModel);
 
     data.fold(
-      (l) => emit(PaymentFailure(errorMessage: l.errorMessage)),
+      (l) {
+        emit(PaymentFailure(errorMessage: l.errorMessage));
+        log(l.errorMessage);
+      },
       (r) => emit(
         PaymentSuccess(),
       ),
