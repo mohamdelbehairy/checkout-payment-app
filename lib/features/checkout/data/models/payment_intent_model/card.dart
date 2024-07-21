@@ -14,11 +14,11 @@ class Card {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> _data = <String, dynamic>{};
-    _data["installments"] = installments;
-    _data["mandate_options"] = mandateOptions;
-    _data["network"] = network;
-    _data["request_three_d_secure"] = requestThreeDSecure;
-    return _data;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["installments"] = installments;
+    data["mandate_options"] = mandateOptions;
+    data["network"] = network;
+    data["request_three_d_secure"] = requestThreeDSecure;
+    return data;
   }
 }
