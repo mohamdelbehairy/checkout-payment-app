@@ -20,6 +20,7 @@ class CheckoutApp extends StatelessWidget {
   }
 }
 
-// create payment intent (amount,currency) => paymentIntentObject هرجع منها اوبجيكت
-// init payment sheet (paymentIntentClientSecret)
-// present payment sheet
+// create payment intent (amount , currency , customer id)
+// create ephemeral key (stripe version , customer id)
+// init payment sheet => (merchant display name , payment intent client secret , ephemeral key)
+// display payment sheet
